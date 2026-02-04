@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Asli AbdiKadir | Web Designer</title>
+
+<style>
+/* ===== ROOT COLORS ===== */
+:root {
+  --bg-dark: #0f0f14;
+  --bg-soft: #1c1c24;
+  --primary: #00d2d3; /* Midabka quruxda badan ee u eg kan Fardous */
+  --text-soft: #bdbdbd;
+  --border-soft: #2a2a35;
+}
+
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: radial-gradient(circle at top, #1a1a2e, #0f0f14);
+  color: white;
+  min-height: 100vh;
+}
+
+/* ===== NAVBAR ===== */
+nav {
+  position: fixed;
+  top: 20px;
+  right: 40px;
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(12px);
+  padding: 12px 24px;
+  border-radius: 30px;
+  z-index: 1000;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 18px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: var(--primary);
+}
+
+/* ===== HERO / PROFILE ===== */
+.hero {
+  text-align: center;
+  padding: 120px 20px 80px;
+}
+
+.hero img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%; /* Sawirkaaga wuxuu noqonayaa mid wareegsan */
+  border: 4px solid var(--primary);
+  margin-bottom: 20px;
+  object-fit: cover;
+}
+
+.hero h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  color: var(--text-soft);
+  max-width: 600px;
+  margin: auto;
+}
+
+.badge {
+  display: inline-block;
+  background: rgba(0,210,211,0.15);
+  color: var(--primary);
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  margin-bottom: 20px;
+}
+
+/* ===== MAIN ===== */
+main {
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 30px 100px;
+}
+
+/* ===== BENTO GRID ===== */
+.bento-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 190px;
+  gap: 22px;
+}
+
+/* ===== TILES ===== */
+.tile {
+  background: var(--bg-soft);
+  border-radius: 24px;
+  padding: 28px;
+  border: 1px solid var(--border-soft);
+  transition: 0.3s;
+}
+
+.tile:hover {
+  transform: translateY(-6px);
+  border-color: var(--primary);
+  box-shadow: 0 12px 35px rgba(0,210,211,0.15);
+}
+
+.tile h3 {
+  margin-bottom: 10px;
+}
+
+.tile p {
+  color: var(--text-soft);
+  font-size: 14px;
+}
+
+/* ===== GRID SPANS ===== */
+.about {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.skills span {
+  display: inline-block;
+  background: rgba(255,255,255,0.08);
+  padding: 6px 14px;
+  border-radius: 18px;
+  margin: 6px 4px 0 0;
+  font-size: 13px;
+}
+
+/* ===== BUTTON ===== */
+.contact-btn {
+  margin-top: 15px;
+  padding: 10px 18px;
+  border-radius: 20px;
+  border: none;
+  background: var(--primary);
+  color: #000;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--text-soft);
+  font-size: 14px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .bento-wrapper {
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+  }
+  nav {
+    right: 20px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="hero" id="home">
+  <span class="badge">Open to new projects</span>
+  <img src="https://via.placeholder.com/150" alt="Asli AbdiKadir">
+  <h1>Hi, I'm Asli AbdiKadir Hussien 👩‍💻</h1>
+  <p>I'm a girl who knows different knowledge, can speak many languages, and I'm also a passionate web designer.</p>
+</section>
+
+<main>
+  <div class="bento-wrapper">
+
+    <div class="tile about">
+      <h3>About Me</h3>
+      <p>
+        I specialize in building modern frontend applications with clean 
+        architecture. My focus is on creating user-friendly websites 
+        that look great and work perfectly on all devices.
+      </p>
+    </div>
+
+    <div class="tile skills" id="skills">
+      <h3>Tech Stack</h3>
+      <span>HTML</span>
+      <span>CSS</span>
+      <span>JavaScript</span>
+      <span>UI Design</span>
+      <span>Git & GitHub</span>
+    </div>
+
+    <div class="tile education" id="education">
+      <h3>Education</h3>
+      <p><strong>Web Development & Design</strong><br>Self-taught & Passionate Learner</p>
+    </div>
+
+    <div class="tile contact" id="contact">
+      <h3>Let’s Chat</h3>
+      <p>asliabdiqadir33@gmail.com</p>
+      <button class="contact-btn">Email Me</button>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  © 2026 Asli AbdiKadir — Web Designer & Developer
+</footer>
+
+</body>
+</html>

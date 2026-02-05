@@ -1,242 +1,170 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="so">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Asli AbdiKadir | Web Designer</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Asli Portfolio | Web Designer</title>
+  <style>
+    :root {
+      --main: #6c5ce7;
+      --soft: #a29bfe;
+      --dark: #341f97;
+      --glass: rgba(255, 255, 255, 0.1);
+    }
 
-<style>
-/* ===== ROOT COLORS ===== */
-:root {
-  --bg-dark: #0f0f14;
-  --bg-soft: #1c1c24;
-  --primary: #00d2d3; /* Midabka quruxda badan ee u eg kan Fardous */
-  --text-soft: #bdbdbd;
-  --border-soft: #2a2a35;
-}
+    body {
+      background: linear-gradient(135deg, #0f0f14, #341f97);
+      min-height: 100vh;
+      color: #fff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
 
-/* ===== RESET ===== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-}
+    /* ===== HERO PROFILE ===== */
+    .hero {
+      text-align: center;
+      padding: 90px 20px 60px;
+    }
 
-body {
-  background: radial-gradient(circle at top, #1a1a2e, #0f0f14);
-  color: white;
-  min-height: 100vh;
-}
+    .hero img {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%; /* Sawir goobo ah */
+      border: 5px solid var(--soft);
+      margin-bottom: 20px;
+      object-fit: cover;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
 
-/* ===== NAVBAR ===== */
-nav {
-  position: fixed;
-  top: 20px;
-  right: 40px;
-  background: rgba(255,255,255,0.06);
-  backdrop-filter: blur(12px);
-  padding: 12px 24px;
-  border-radius: 30px;
-  z-index: 1000;
-}
+    .hero h1 {
+      font-size: 32px;
+      margin-bottom: 8px;
+    }
 
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 18px;
-}
+    .hero p {
+      opacity: 0.85;
+      font-size: 18px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
 
-nav a {
-  color: white;
-  text-decoration: none;
-  font-size: 14px;
-  transition: 0.3s;
-}
+    /* ===== NAV ===== */
+    nav {
+      position: sticky;
+      top: 20px;
+      margin: 0 auto 40px;
+      width: fit-content;
+      background: var(--glass);
+      backdrop-filter: blur(14px);
+      padding: 12px 30px;
+      border-radius: 30px;
+      border: 1px solid rgba(255,255,255,0.1);
+      z-index: 100;
+    }
 
-nav a:hover {
-  color: var(--primary);
-}
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: 500;
+      transition: 0.3s;
+    }
 
-/* ===== HERO / PROFILE ===== */
-.hero {
-  text-align: center;
-  padding: 120px 20px 80px;
-}
+    nav a:hover {
+      color: var(--soft);
+    }
 
-.hero img {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%; /* Sawirkaaga wuxuu noqonayaa mid wareegsan */
-  border: 4px solid var(--primary);
-  margin-bottom: 20px;
-  object-fit: cover;
-}
+    /* ===== MAIN ===== */
+    main {
+      max-width: 900px;
+      margin: auto;
+      padding: 0 25px 80px;
+    }
 
-.hero h1 {
-  font-size: 36px;
-  margin-bottom: 10px;
-}
+    /* ===== CARDS ===== */
+    .card {
+      background: var(--glass);
+      backdrop-filter: blur(14px);
+      border-radius: 22px;
+      padding: 35px;
+      margin-bottom: 25px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
 
-.hero p {
-  color: var(--text-soft);
-  max-width: 600px;
-  margin: auto;
-}
+    .card h3 {
+      color: var(--soft);
+      margin-top: 0;
+    }
 
-.badge {
-  display: inline-block;
-  background: rgba(0,210,211,0.15);
-  color: var(--primary);
-  padding: 6px 16px;
-  border-radius: 20px;
-  font-size: 13px;
-  margin-bottom: 20px;
-}
+    /* ===== SKILLS ===== */
+    .skills span {
+      background: rgba(255,255,255,0.1);
+      padding: 8px 16px;
+      border-radius: 20px;
+      margin: 6px;
+      display: inline-block;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
 
-/* ===== MAIN ===== */
-main {
-  max-width: 1100px;
-  margin: auto;
-  padding: 0 30px 100px;
-}
-
-/* ===== BENTO GRID ===== */
-.bento-wrapper {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-auto-rows: 190px;
-  gap: 22px;
-}
-
-/* ===== TILES ===== */
-.tile {
-  background: var(--bg-soft);
-  border-radius: 24px;
-  padding: 28px;
-  border: 1px solid var(--border-soft);
-  transition: 0.3s;
-}
-
-.tile:hover {
-  transform: translateY(-6px);
-  border-color: var(--primary);
-  box-shadow: 0 12px 35px rgba(0,210,211,0.15);
-}
-
-.tile h3 {
-  margin-bottom: 10px;
-}
-
-.tile p {
-  color: var(--text-soft);
-  font-size: 14px;
-}
-
-/* ===== GRID SPANS ===== */
-.about {
-  grid-column: span 2;
-  grid-row: span 2;
-}
-
-.skills span {
-  display: inline-block;
-  background: rgba(255,255,255,0.08);
-  padding: 6px 14px;
-  border-radius: 18px;
-  margin: 6px 4px 0 0;
-  font-size: 13px;
-}
-
-/* ===== BUTTON ===== */
-.contact-btn {
-  margin-top: 15px;
-  padding: 10px 18px;
-  border-radius: 20px;
-  border: none;
-  background: var(--primary);
-  color: #000;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-/* ===== FOOTER ===== */
-footer {
-  text-align: center;
-  padding: 40px 20px;
-  color: var(--text-soft);
-  font-size: 14px;
-}
-
-/* ===== RESPONSIVE ===== */
-@media (max-width: 900px) {
-  .bento-wrapper {
-    grid-template-columns: 1fr;
-    grid-auto-rows: auto;
-  }
-  nav {
-    right: 20px;
-  }
-}
-</style>
+  </style>
 </head>
-
 <body>
 
+<header class="hero">
+  <img src="asli.jpeg" alt="Asli Profile">
+  <h1>Asli AbdiKadir Hussien</h1>
+  <p>I'm a girl who knows different knowledge, can speak many languages, and I'm also a passionate web designer.</p>
+</header>
+
 <nav>
-  <ul>
-    <li><a href="#home">Home</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#education">Education</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
+  <a href="#about">About</a>
+  <a href="#skills">Skills</a>
+  <a href="#experience">Experience</a>
+  <a href="#contact">Contact</a>
 </nav>
 
-<section class="hero" id="home">
-  <span class="badge">Open to new projects</span>
-  <img src="https://via.placeholder.com/150" alt="Asli AbdiKadir">
-  <h1>Hi, I'm Asli AbdiKadir Hussien 👩‍💻</h1>
-  <p>I'm a girl who knows different knowledge, can speak many languages, and I'm also a passionate web designer.</p>
-</section>
-
 <main>
-  <div class="bento-wrapper">
 
-    <div class="tile about">
+  <section>
+    <div class="card" id="about">
       <h3>About Me</h3>
       <p>
-        I specialize in building modern frontend applications with clean 
-        architecture. My focus is on creating user-friendly websites 
-        that look great and work perfectly on all devices.
+        I specialize in building modern frontend applications with clean architecture. 
+        My focus is on creating user-friendly websites that look great and work perfectly on all devices.
       </p>
     </div>
 
-    <div class="tile skills" id="skills">
-      <h3>Tech Stack</h3>
-      <span>HTML</span>
-      <span>CSS</span>
-      <span>JavaScript</span>
-      <span>UI Design</span>
-      <span>Git & GitHub</span>
+    <div class="card" id="skills">
+      <h3>Skills</h3>
+      <div class="skills">
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>JavaScript</span>
+        <span>UI Design</span>
+        <span>Git & GitHub</span>
+        <span>Multilingual</span>
+      </div>
     </div>
 
-    <div class="tile education" id="education">
-      <h3>Education</h3>
-      <p><strong>Web Development & Design</strong><br>Self-taught & Passionate Learner</p>
+    <div class="card" id="experience">
+      <h3>Experience</h3>
+      <div class="item">
+        <h4>Web Designer & Learner</h4>
+        <small>2025 – Present</small>
+        <p>Creating responsive layouts and learning modern web technologies.</p>
+      </div>
     </div>
 
-    <div class="tile contact" id="contact">
-      <h3>Let’s Chat</h3>
-      <p>asliabdiqadir33@gmail.com</p>
-      <button class="contact-btn">Email Me</button>
+    <div class="card contact" id="contact">
+      <h3>Contact</h3>
+      <p>🌍 Somalia</p>
+      <p>💻 GitHub: Asli-AbdiKadir-Hussien</p>
     </div>
+  </section>
 
-  </div>
 </main>
-
-<footer>
-  © 2026 Asli AbdiKadir — Web Designer & Developer
-</footer>
 
 </body>
 </html>
